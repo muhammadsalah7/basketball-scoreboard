@@ -81,10 +81,28 @@ h3 {
 
 .scoreboard-home,
 .scoreboard-guest {
-  width: 8.75em;
+  width: 8.75em; /* Initial width */
   background-color: var(--scoreboard);
   margin: 1.25em auto;
   border-radius: 5px;
+  text-align: center; /* Align numbers to the center */
+
+  display: flex; /* Enable flexible box layout */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Center content horizontally */
+
+  /* Allow the div to grow as needed, preventing overflow: */
+  white-space: nowrap; /* Prevent line breaks within the div */
+  overflow: hidden; /* Hide any content that exceeds the div's width */
+  text-overflow: ellipsis; /* Add ellipsis if content overflows */
+}
+
+/* Optional media query for wider screens (e.g., tablets): */
+@media only screen and (min-width: 768px) {
+  .scoreboard-home,
+  .scoreboard-guest {
+    width: 11.25em; /* Wider width for larger screens */
+  }
 }
 
 h2 {
